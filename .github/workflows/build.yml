@@ -1,4 +1,4 @@
-name: NexStream Build
+name: Build APK
 on: [push]
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter build apk --release --no-tree-shake-icons
-      - name: Upload APK
+      - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: nexstream-apk
