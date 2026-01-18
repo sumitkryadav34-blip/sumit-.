@@ -9,10 +9,9 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk --release --no-tree-shake-icons
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: nexstream-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-          
